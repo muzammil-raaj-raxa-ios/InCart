@@ -42,7 +42,11 @@ class LoginVC: UIViewController {
   }
   
   @IBAction func loginBtn(_ sender: UIButton) {
-    print("login pressed")
+    print("HomeVC")
+    let storyboard = UIStoryboard(name: "HomeVC", bundle: .main)
+    if let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as? HomeVC {
+      self.navigationController?.pushViewController(vc, animated: true)
+    }
   }
   
   @IBAction func signupBtn(_ sender: UIButton) {
